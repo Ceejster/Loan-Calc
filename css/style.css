@@ -18,7 +18,13 @@ nav {
     padding-right: 1rem;
 }
 
+.underline {
+    text-decoration: underline;
+}
 
+.italic {
+    font-style: italic;
+}
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
@@ -31,6 +37,34 @@ main>.container {
 
 .checklist > li i {
     color: var(--secondary);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+thead {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+}
+  
+.allData td, th {
+    border: 1px solid #dddddd;
+    padding: 4px;
+}
+
+.spacer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+legend {
+    font-size: medium;
+    font-weight: bold;
 }
 
 .bsicon {

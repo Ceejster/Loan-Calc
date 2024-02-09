@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>JS Coding Practice</title>
+    <title>Loaner</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +18,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">JS Project</a>
+        <a class="navbar-brand" href="index.html">Loaner</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,41 +44,128 @@
 
 <main class="flex-shrink-0">
     <div class="container">
-        <div class="row row-cols-1 row-cols-lg-2">
+        <div class="row">
             <div class="col">
-                <h1 class="display-5 fw-bold lh-1 mb-3 pt-4">
-                    NAME
-                </h1>
-                <h4 class="lead">
-                    Description
-                </h4>
-            </div>
-            <div class="col">
-                <h4 class="border-1 border-bottom border-dark pt-4">
-                    Whats it do
-                </h4>
-            </div>
+                <h3 class="fw-bold lh-1 mb-3 pt-4 underline">
+                    Loaner
+                </h3>
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="p-3 border border-2 shadow-lg bg-light">
+                        <div class="row mb-2">
+                            <!--User input amounts-->
+                            <div class="col">
+                                <!--Row 1-->
+                                <div class="row mb-1">
+                                    <div class="col">
+                                        <form-label>Loan Amount</form-label>
+                                        <input type="number" name="loan" class="form-control" id="userLoan" placeholder="0" aria-label="First name" required>
+                                    </div>
+                                </div>
+                                <!--Row 2-->
+                                <div class="row mb-1 ">
+                                    <div class="col">
+                                        <form-label>Payment months:</form-label>
+                                        <input type="number" name="payment" class="form-control" id="userMonths" placeholder="Months" aria-label="Email" required>
+                                    </div>
+                                </div>
+                                <!--Row 3-->
+                                <div class="row mb-1">
+                                    <div class="col">
+                                        <form-label>Rate %:</form-label>
+                                        <input type="number" name="rate" class="form-control" id="userRate" placeholder="Rate" aria-label="Primary address" required>
+                                    </div>
+                                </div>
+                                <!--Monlthy or Yearly-->
+                                <div class="row">
+                                    <fieldset>
+                                        <legend>Montlhy or Yearly Interest:</legend>
+                                        <div>
+                                            <input type="radio" id="montlhy" name="monthYear" value="montlhy" checked />
+                                            <label for="montlhy" class="pe-3">Monthly</label>
+                            
+                                            <input type="radio" id="yearly" name="monthYear" value="yearly" />
+                                            <label for="yearly">Yearly</label>
+                                          </div>
+                                    </fieldset>
+                                </div>
+                                <!--Row 4-->
+                                <div class="row mb-1">
+                                    <div class="col d-flex justify-content-end">
+                                        <button class="btn btn-outline-dark" id="loanSubmit">Calculate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row text-end">
+                            <h4 class="underline pt-4 italic">
+                                Monthly Payments
+                            </h4>
+                            <p id="monthlyPayment">
+                                <!--JS Calc-->
+                            </p>
+                        </div>
+                        <!--Maybe dont use table to float all right-->
+                        <table>
+                            <tr>
+                                <td>Principal:</td>
+                                <td class="text-end" id="principalAmount"><!--JS Calc--></td>
+                            </tr>
+                            <tr>
+                                <td>Total Interest:</td>
+                                <td class="text-end spacer" id="totalInterest"><!--JS Calc--></td>
+                            </tr>
+                            <tr>
+                                <td>Total Cost:</td>
+                                <td class="text-end" id="totalCost"><!--JS Calc--></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>  
+            </div>   
+        </div>
+        <!--table with loan data-->
+        <div>
+            <table class="allData">
+                <thead>
+                    <tr>
+                      <th scope="col">Month</th>
+                      <th scope="col">Payment</th>
+                      <th scope="col">Principal</th>
+                      <th scope="col">Interest</th>
+                      <th scope="col">Total Interest</th>
+                      <th scope="col">Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!--JS data-->
+                  </tbody>
+            </table>
         </div>
     </div>
- </main>
+</main>
 
- <footer class="footer mt-auto py-3">
+<footer class="footer mt-auto py-3">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col text-light d-flex align-items-center justify-content-start">
+        <div class="row row-cols-1 row-cols-md-3 gy-2">
+            <!--TM-->
+            <div class="col order-last order-md-first text-light d-flex align-items-center justify-content-start">
                 <div>
                     <span class="text-muted">&copy;2024 CJ Bowman | CJBowman@live.com</span>
                 </div>
             </div>
-            <div class="col d-flex align-items-center justify-content-center">
+            <!--Logo-->
+            <div class="col d-flex align-items-center justify-content-start justify-content-md-center text-light">
                 <img src="css/images/Sessions logo.PNG" alt="filler logo" height="24">
             </div>
-            <div class="col d-flex align-items-center justify-content-end">
+            <!--Icons-->
+            <div class="col d-flex align-items-center justify-content-start justify-content-md-end">
                 <div class="row">
-                    <div class="col">
+                    <div class="social col">
                         <a href="https://www.linkedin.com/in/cj-bowman-1bbb1890/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
                     </div>
-                    <div class="col">
+                    <div class="social col">
                         <a href="https://github.com/ceejster" target="_blank"><i class="fab fa-github fa-2x"></i></a>
                     </div>
                 </div>
@@ -94,7 +181,7 @@
     <script src="js/script.js"></script>
     <script>
         //change to relevant names
-        document.getElementById("reverseSubmit").addEventListener("click", getValue);
+        document.getElementById("loanSubmit").addEventListener("click", getValues);
     </script>
 </body>
 
