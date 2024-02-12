@@ -9,6 +9,10 @@ function getValues() {
 
     document.getElementById("principalAmount").innerHTML = `${dollar}`;
 
+    let months = monthRange(monthAmount);
+
+    displayData(months, dollar, loanAmount, interest);
+
 }
 
 function moneyFormat(format) {
@@ -23,4 +27,45 @@ function interestCalculator(loan, rate) {
     let montlhyPercent = monthlyRate * 100;
 
     return monthlyInterest;
+}
+
+function monthRange(month) {
+    let range = [];
+
+    for (let i = 0; i <= month; i++) {
+        range.push(i);
+    }
+
+    return range;
+}
+
+function displayData(month, payment, principal, interest) {
+    let tableBody = document.getElementById("results");
+    let tableTemplate = document.getElementById("loanTable");
+
+    //clear table
+    tableBody.innerHTML = "";
+
+    for (let i = 0; i < month.length; i += 1) {
+        let tableRow = document.importNode(tableTemplate.content, true);
+
+        //grab td to put into array
+        let rowCols = tableRow.querySelectorAll("td");
+
+        let addedInterest = interest += interest;
+
+        rowCols[0].textContent = month[i];
+
+        rowCols[1].textContent = payment;
+
+        rowCols[2].textContent = principal;
+
+        rowCols[3].textContent = interest;
+
+        rowCols[4].textContent = addedInterest;
+
+        rowCols[5].textContent = principal + interest;
+
+        tableBody.appendChild(tableRow);
+    }
 }

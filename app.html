@@ -107,26 +107,22 @@
                             </p>
                         </div>
                         <!--Maybe dont use table to float all right-->
-                        <table>
-                            <tr>
-                                <td>Principal:</td>
-                                <td class="text-end" id="principalAmount"><!--JS Calc--></td>
-                            </tr>
-                            <tr>
-                                <td>Total Interest:</td>
-                                <td class="text-end spacer" id="totalInterest"><!--JS Calc--></td>
-                            </tr>
-                            <tr>
-                                <td>Total Cost:</td>
-                                <td class="text-end" id="totalCost"><!--JS Calc--></td>
-                            </tr>
-                        </table>
+
+                                <div>Principal:</div>
+                                <div class="text-end" id="principalAmount"><!--JS Calc--></div>
+
+                                <div>Total Interest:</div>
+                                <div class="text-end spacer" id="totalInterest"><!--JS Calc--></div>
+
+                                <div>Total Cost:</div>
+                                <div class="text-end" id="totalCost"><!--JS Calc--></div>
+
                     </div>
                 </div>  
             </div>   
         </div>
         <!--table with loan data-->
-        <div>
+        <div class="table-responsive">
             <table class="allData">
                 <thead>
                     <tr>
@@ -138,8 +134,11 @@
                       <th scope="col">Balance</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="results"  class="table table-striped table-sm">
                     <!--JS data-->
+                    <tr>
+
+                    </tr>
                   </tbody>
             </table>
         </div>
@@ -173,6 +172,17 @@
         </div>
     </div>
 </footer>
+
+<template id="loanTable">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
